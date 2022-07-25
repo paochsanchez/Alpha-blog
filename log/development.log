@@ -606,3 +606,111 @@ Migrating to AddUseridToArticles (20220725195108)
   [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mArticle Update All (3.7ms)[0m  [1m[33mUPDATE "articles" SET "user_id" = ?[0m  [["user_id", 1]]
+Started GET "/" for 127.0.0.1 at 2022-07-25 14:04:13 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 14.9ms | Allocations: 4141)
+[Webpacker] Compiling...
+Started GET "/articles" for 127.0.0.1 at 2022-07-25 14:04:25 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 165.8ms | Allocations: 16971)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in C:/Users/Laptop/OneDrive/Documentos/Ruby on Rails - Curso/Alpha-blog/public/packs
+[Webpacker] Browserslist: caniuse-lite is outdated. Please run the following command: `yarn upgrade`
+
+[Webpacker] Hash: a5d262e2d92b380cce74
+Version: webpack 4.42.0
+Time: 8532ms
+Built at: 25/07/2022 14:04:38
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-4b0cec6457a8a80ef93d.js    648 KiB  application  [emitted] [immutable]  application
+js/application-4b0cec6457a8a80ef93d.js.map    760 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-4b0cec6457a8a80ef93d.js js/application-4b0cec6457a8a80ef93d.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 771 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 6 hidden modules
+
+  Rendered layouts/_navigation.html.erb (Duration: 27.8ms | Allocations: 356)
+  Rendered layouts/_messages.html.erb (Duration: 7.0ms | Allocations: 170)
+  Rendered layouts/_footer.html.erb (Duration: 9.4ms | Allocations: 150)
+Completed 200 OK in 12774ms (Views: 12761.9ms | ActiveRecord: 4.2ms | Allocations: 204120)
+
+
+[Webpacker] Compiled all packs in C:/Users/Laptop/OneDrive/Documentos/Ruby on Rails - Curso/Alpha-blog/public/packs
+[Webpacker] Browserslist: caniuse-lite is outdated. Please run the following command: `yarn upgrade`
+
+[Webpacker] Hash: a5d262e2d92b380cce74
+Version: webpack 4.42.0
+Time: 15914ms
+Built at: 25/07/2022 14:04:38
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-4b0cec6457a8a80ef93d.js    648 KiB  application  [emitted] [immutable]  application
+js/application-4b0cec6457a8a80ef93d.js.map    760 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-4b0cec6457a8a80ef93d.js js/application-4b0cec6457a8a80ef93d.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 771 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 6 hidden modules
+
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 169)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 25131ms (Views: 25064.4ms | ActiveRecord: 0.0ms | Allocations: 468633)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-07-25 14:04:45 -0600
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1950)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 155)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 77ms (Views: 74.6ms | ActiveRecord: 1.2ms | Allocations: 10960)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-07-25 14:04:51 -0600
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 11.8ms | Allocations: 180)
+  Rendered articles/_form.html.erb (Duration: 124.0ms | Allocations: 4737)
+  Rendered articles/new.html.erb within layouts/application (Duration: 127.7ms | Allocations: 5154)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 153)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 196ms (Views: 192.6ms | ActiveRecord: 0.0ms | Allocations: 18275)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPasswordDigestToUsers (20220725202736)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPasswordDigestToUsers (20220725202736)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220725202736"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
