@@ -714,3 +714,152 @@ Migrating to AddPasswordDigestToUsers (20220725202736)
   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/articles/new" for 127.0.0.1 at 2022-07-25 14:45:06 -0600
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.9ms | Allocations: 255)
+  Rendered articles/_form.html.erb (Duration: 22.2ms | Allocations: 10427)
+  Rendered articles/new.html.erb within layouts/application (Duration: 25.8ms | Allocations: 11291)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in C:/Users/Laptop/OneDrive/Documentos/Ruby on Rails - Curso/Alpha-blog/public/packs
+[Webpacker] Hash: a5d262e2d92b380cce74
+Version: webpack 4.42.0
+Time: 2494ms
+Built at: 25/07/2022 14:45:13
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-4b0cec6457a8a80ef93d.js    648 KiB  application  [emitted] [immutable]  application
+js/application-4b0cec6457a8a80ef93d.js.map    760 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-4b0cec6457a8a80ef93d.js js/application-4b0cec6457a8a80ef93d.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 771 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 6 hidden modules
+
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 357)
+  Rendered layouts/_messages.html.erb (Duration: 0.7ms | Allocations: 170)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 150)
+Completed 200 OK in 7098ms (Views: 7069.8ms | ActiveRecord: 1.1ms | Allocations: 147257)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-07-25 14:45:35 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered users/_form.html.erb (Duration: 21.5ms | Allocations: 2241)
+  Rendered users/new.html.erb within layouts/application (Duration: 24.1ms | Allocations: 2562)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 153)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 111ms (Views: 88.8ms | ActiveRecord: 7.5ms | Allocations: 17906)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-25 14:45:38 -0600
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for UsersController):
+  
+actionpack (6.0.5.1) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.5.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.5.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.5.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.5.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.5.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.5.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.5.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.5.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.5.1) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/cookies.rb:654:in `call'
+activerecord (6.0.5.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.5.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.5.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.5.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.5.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.5.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.5.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.5.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/host_authorization.rb:103:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.0.5.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/signup" for 127.0.0.1 at 2022-07-25 14:55:45 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.8ms | Allocations: 190)
+  Rendered users/_form.html.erb (Duration: 5.7ms | Allocations: 2028)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 2349)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 338)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 161)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 143)
+Completed 200 OK in 83ms (Views: 73.6ms | ActiveRecord: 0.0ms | Allocations: 27193)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-25 14:55:58 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"gezcxyhqy22z6b0e2CofcuGT0y8moP86LZ0fOZheagdui89WNVdYil6ASXSxp4JIk4BrLJK4C3zm08JrqKeBqA==", "user"=>{"username"=>"paolanc2", "email"=>"pchinchilla@estudiantec.cr", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "paolanc2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "pchinchilla@estudiantec.cr"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["username", "paolanc2"], ["email", "pchinchilla@estudiantec.cr"], ["created_at", "2022-07-25 20:55:58.882810"], ["updated_at", "2022-07-25 20:55:58.882810"], ["password_digest", "$2a$12$KC3A2ogjQxI1yHx0gRowdufvOL8786ExtDfQcTUHH.t0Sz0UWMWFW"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Redirected to http://127.0.0.1:3000/articles
+Completed 302 Found in 267ms (ActiveRecord: 4.7ms | Allocations: 6065)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-07-25 14:55:58 -0600
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 17.4ms | Allocations: 8029)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 155)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 89ms (Views: 84.2ms | ActiveRecord: 0.6ms | Allocations: 18276)
+
+
