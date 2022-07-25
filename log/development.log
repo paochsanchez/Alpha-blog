@@ -1,0 +1,573 @@
+Started GET "/" for 127.0.0.1 at 2022-07-24 20:05:08 -0600
+  [1m[35m (12.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.5.1) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.5.1) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.5.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.5.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.5.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.5.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.5.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.5.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.5.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/host_authorization.rb:103:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.0.5.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/rails/actions" for 127.0.0.1 at 2022-07-24 20:05:19 -0600
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateArticles (20200312130019)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "articles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200312130019"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddTimestampsToArticles (20200312131609)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.1ms)[0m  [1m[35mALTER TABLE "articles" ADD "created_at" datetime[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "articles" ADD "updated_at" datetime[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200312131609"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-07-25 02:05:19.729198"], ["updated_at", "2022-07-25 02:05:19.729198"]]
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2022-07-24 20:05:19 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 14.3ms | Allocations: 4835)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 1b5d419915bbef61fb44
+Version: webpack 4.42.0
+Time: 4707ms
+Built at: 24/07/2022 20:05:33
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-25bb416d79a16f6c7298.js   7.43 KiB  application  [emitted] [immutable]  application
+js/application-25bb416d79a16f6c7298.js.map   3.53 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-25bb416d79a16f6c7298.js js/application-25bb416d79a16f6c7298.js.map
+[./app/javascript/packs/application.js] 3.54 KiB {application} [built] [failed] [1 error]
+
+ERROR in ./app/javascript/packs/application.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+Error: Cannot find module 'C:\Users\Laptop\OneDrive\Documentos\Ruby on Rails - Curso\alpha-blog\node_modules\@babel\compat-data\data\corejs3-shipped-proposals'
+    at createEsmNotFoundErr (internal/modules/cjs/loader.js:912:15)
+    at finalizeEsmResolution (internal/modules/cjs/loader.js:905:15)
+    at resolveExports (internal/modules/cjs/loader.js:437:14)
+    at Function.Module._findPath (internal/modules/cjs/loader.js:477:31)
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:872:27)
+    at Function.Module._load (internal/modules/cjs/loader.js:730:27)
+    at Module.require (internal/modules/cjs/loader.js:957:19)
+    at require (C:\Users\Laptop\OneDrive\Documentos\Ruby on Rails - Curso\alpha-blog\node_modules\v8-compile-cache\v8-compile-cache.js:161:20)
+    at Object.<anonymous> (C:\Users\Laptop\OneDrive\Documentos\Ruby on Rails - Curso\alpha-blog\node_modules\@babel\preset-env\lib\polyfills\corejs3\usage-plugin.js:10:55)
+    at Module._compile (C:\Users\Laptop\OneDrive\Documentos\Ruby on Rails - Curso\alpha-blog\node_modules\v8-compile-cache\v8-compile-cache.js:192:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1097:10)
+    at Module.load (internal/modules/cjs/loader.js:933:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:774:14)
+    at Module.require (internal/modules/cjs/loader.js:957:19)
+    at require (C:\Users\Laptop\OneDrive\Documentos\Ruby on Rails - Curso\alpha-blog\node_modules\v8-compile-cache\v8-compile-cache.js:161:20)
+    at Object.<anonymous> (C:\Users\Laptop\OneDrive\Documentos\Ruby on Rails - Curso\alpha-blog\node_modules\@babel\preset-env\lib\index.js:29:44)
+    at Module._compile (C:\Users\Laptop\OneDrive\Documentos\Ruby on Rails - Curso\alpha-blog\node_modules\v8-compile-cache\v8-compile-cache.js:192:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1097:10)
+    at Module.load (internal/modules/cjs/loader.js:933:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:774:14)
+    at Module.require (internal/modules/cjs/loader.js:957:19)
+    at require (C:\Users\Laptop\OneDrive\Documentos\Ruby on Rails - Curso\alpha-blog\node_modules\v8-compile-cache\v8-compile-cache.js:161:20)
+    at requireModule (C:\Users\Laptop\OneDrive\Documentos\Ruby on Rails - Curso\alpha-blog\node_modules\@babel\core\lib\config\files\plugins.js:165:12)
+    at loadPreset (C:\Users\Laptop\OneDrive\Documentos\Ruby on Rails - Curso\alpha-blog\node_modules\@babel\core\lib\config\files\plugins.js:83:17)
+    at createDescriptor (C:\Users\Laptop\OneDrive\Documentos\Ruby on Rails - Curso\alpha-blog\node_modules\@babel\core\lib\config\config-descriptors.js:154:9)
+    at C:\Users\Laptop\OneDrive\Documentos\Ruby on Rails - Curso\alpha-blog\node_modules\@babel\core\lib\config\config-descriptors.js:109:50
+    at Array.map (<anonymous>)
+    at createDescriptors (C:\Users\Laptop\OneDrive\Documentos\Ruby on Rails - Curso\alpha-blog\node_modules\@babel\core\lib\config\config-descriptors.js:109:29)
+    at createPresetDescriptors (C:\Users\Laptop\OneDrive\Documentos\Ruby on Rails - Curso\alpha-blog\node_modules\@babel\core\lib\config\config-descriptors.js:101:10)
+    at presets (C:\Users\Laptop\OneDrive\Documentos\Ruby on Rails - Curso\alpha-blog\node_modules\@babel\core\lib\config\config-descriptors.js:47:19)
+
+
+warning ..\..\..\..\package.json: No license field
+
+  Rendered layouts/_messages.html.erb (Duration: 8.8ms | Allocations: 149)
+Completed 200 OK in 13804ms (Views: 13765.4ms | ActiveRecord: 0.0ms | Allocations: 229529)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-24 20:11:15 -0600
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 373)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in C:/Users/Laptop/OneDrive/Documentos/Ruby on Rails - Curso/alpha-blog/public/packs
+[Webpacker] warning ..\..\..\..\package.json: No license field
+Browserslist: caniuse-lite is outdated. Please run the following command: `yarn upgrade`
+
+[Webpacker] Hash: a5d262e2d92b380cce74
+Version: webpack 4.42.0
+Time: 12253ms
+Built at: 24/07/2022 20:11:32
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-4b0cec6457a8a80ef93d.js    648 KiB  application  [emitted] [immutable]  application
+js/application-4b0cec6457a8a80ef93d.js.map    760 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-4b0cec6457a8a80ef93d.js js/application-4b0cec6457a8a80ef93d.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 771 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 6 hidden modules
+
+  Rendered layouts/_messages.html.erb (Duration: 0.8ms | Allocations: 151)
+Completed 200 OK in 16517ms (Views: 16497.9ms | ActiveRecord: 0.0ms | Allocations: 246514)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-07-24 20:11:47 -0600
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:13
+  Rendered articles/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1487)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+Completed 200 OK in 127ms (Views: 72.4ms | ActiveRecord: 1.5ms | Allocations: 18381)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-07-24 20:12:01 -0600
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:13
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 691)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 18)
+Completed 200 OK in 68ms (Views: 66.4ms | ActiveRecord: 0.4ms | Allocations: 8818)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-07-24 20:22:05 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 222.5ms | Allocations: 12928)
+  Rendered articles/new.html.erb within layouts/application (Duration: 225.5ms | Allocations: 13302)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 292ms (Views: 275.3ms | ActiveRecord: 1.1ms | Allocations: 24808)
+
+
+Started POST "/articles" for 127.0.0.1 at 2022-07-24 20:22:20 -0600
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"fhRwrIGw+xjKLePqIqjbnJsv+Hfn0kwaroTDHVA2zByTtqlXXXn2LdYqh5N/K6e1WPjp0xWHM3ROWdkOZyc/Fw==", "article"=>{"title"=>"Gato", "description"=>"Rojo"}, "commit"=>"Create Article"}
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 5.5ms | Allocations: 1170)
+  Rendered articles/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1279)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 80ms (Views: 77.2ms | ActiveRecord: 0.0ms | Allocations: 10816)
+
+
+Started POST "/articles" for 127.0.0.1 at 2022-07-24 20:22:31 -0600
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"2rVHdiglR5SBzyBm2yEA7OkEyAKw2yTAXWQ+2Iqiw+I10lTnNRjUc2ym1AyyrJ3WmxdwAQTD0IaWKuOKulsoTQ==", "article"=>{"title"=>"Velvet", "description"=>"Rojo y gordo es"}, "commit"=>"Create Article"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+  [1m[36mArticle Create (3.4ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Velvet"], ["description", "Rojo y gordo es"], ["created_at", "2022-07-25 02:22:31.919272"], ["updated_at", "2022-07-25 02:22:31.919272"]]
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+Redirected to http://127.0.0.1:3000/articles/1
+Completed 302 Found in 26ms (ActiveRecord: 5.8ms | Allocations: 2901)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-07-24 20:22:31 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 333)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 20)
+Completed 200 OK in 64ms (Views: 56.2ms | ActiveRecord: 0.4ms | Allocations: 9729)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-07-24 20:22:34 -0600
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:13
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 875)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 18)
+Completed 200 OK in 79ms (Views: 77.6ms | ActiveRecord: 0.4ms | Allocations: 9005)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-07-24 20:22:38 -0600
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:13
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1163)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+Completed 200 OK in 63ms (Views: 62.4ms | ActiveRecord: 0.3ms | Allocations: 14141)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-07-24 20:22:39 -0600
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:13
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 843)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+Completed 200 OK in 63ms (Views: 62.0ms | ActiveRecord: 0.3ms | Allocations: 8963)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-07-24 20:48:31 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:13
+  Rendered articles/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1119)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 123)
+  Rendered layouts/_messages.html.erb (Duration: 0.8ms | Allocations: 137)
+Completed 200 OK in 520ms (Views: 515.7ms | ActiveRecord: 0.4ms | Allocations: 58490)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-07-24 20:48:42 -0600
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:13
+  Rendered articles/index.html.erb within layouts/application (Duration: 15.3ms | Allocations: 850)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 116ms (Views: 114.5ms | ActiveRecord: 0.4ms | Allocations: 9703)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-07-24 20:48:44 -0600
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:13
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 843)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 80ms (Views: 78.7ms | ActiveRecord: 0.3ms | Allocations: 14640)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-07-24 20:48:44 -0600
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:13
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 843)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 69ms (Views: 67.9ms | ActiveRecord: 0.3ms | Allocations: 9688)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-24 20:48:48 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.7ms | Allocations: 101)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 98ms (Views: 93.4ms | ActiveRecord: 0.0ms | Allocations: 9512)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-24 20:52:10 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.6ms | Allocations: 100)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 290)
+  Rendered layouts/_messages.html.erb (Duration: 0.6ms | Allocations: 137)
+Completed 200 OK in 103ms (Views: 100.7ms | ActiveRecord: 0.0ms | Allocations: 10596)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-24 20:52:29 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 100)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 358)
+  Rendered layouts/_messages.html.erb (Duration: 0.7ms | Allocations: 137)
+Completed 200 OK in 109ms (Views: 105.9ms | ActiveRecord: 0.0ms | Allocations: 13272)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-24 20:53:30 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 165)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 350)
+  Rendered layouts/_messages.html.erb (Duration: 0.9ms | Allocations: 137)
+Completed 200 OK in 80ms (Views: 77.5ms | ActiveRecord: 0.0ms | Allocations: 10736)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-24 21:09:00 -0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 160)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 350)
+  Rendered layouts/_messages.html.erb (Duration: 0.4ms | Allocations: 137)
+Completed 200 OK in 65ms (Views: 62.3ms | ActiveRecord: 0.0ms | Allocations: 10735)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-07-24 21:09:02 -0600
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1381)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 154)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 67ms (Views: 64.5ms | ActiveRecord: 0.4ms | Allocations: 15526)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-07-24 21:09:45 -0600
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  Rendered articles/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1314)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 341)
+  Rendered layouts/_messages.html.erb (Duration: 1.7ms | Allocations: 137)
+Completed 200 OK in 89ms (Views: 85.9ms | ActiveRecord: 0.4ms | Allocations: 11899)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-07-24 21:15:48 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1346)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 341)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 137)
+Completed 200 OK in 76ms (Views: 67.9ms | ActiveRecord: 0.6ms | Allocations: 11902)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2022-07-24 21:15:49 -0600
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 3.5ms | Allocations: 1508)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1836)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 152)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 56ms (Views: 51.7ms | ActiveRecord: 0.3ms | Allocations: 12001)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-07-24 21:15:52 -0600
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (5.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  Rendered articles/index.html.erb within layouts/application (Duration: 12.3ms | Allocations: 1046)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 152)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 79ms (Views: 72.6ms | ActiveRecord: 5.0ms | Allocations: 10044)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-07-24 21:55:58 -0600
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  Rendered articles/index.html.erb within layouts/application (Duration: 28.1ms | Allocations: 7106)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.3ms | Allocations: 358)
+  Rendered layouts/_messages.html.erb (Duration: 1.8ms | Allocations: 170)
+Completed 200 OK in 354ms (Views: 316.4ms | ActiveRecord: 2.2ms | Allocations: 43227)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2022-07-24 21:56:00 -0600
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 1.0ms | Allocations: 180)
+  Rendered articles/_form.html.erb (Duration: 31.3ms | Allocations: 2510)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 57.1ms | Allocations: 2839)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 152)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 156ms (Views: 143.4ms | ActiveRecord: 0.6ms | Allocations: 13083)
+
+
+Started PATCH "/articles/1" for 127.0.0.1 at 2022-07-24 21:56:03 -0600
+Processing by ArticlesController#update as HTML
+  Parameters: {"authenticity_token"=>"V1pvinzm1YO1lxzjYgZG5cUZOVesqsp6nrEZPkE7LYAtOKYQxNKIOJZUTsC5HA6pYEE1QxTXaazkb21Pa7BQfg==", "article"=>{"title"=>"Velvet", "description"=>"Rojo y gord"}, "commit"=>"Update Article", "id"=>"1"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:29:in `update'
+  [1m[36mArticle Update (11.0ms)[0m  [1m[33mUPDATE "articles" SET "description" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["description", "Rojo y gord"], ["updated_at", "2022-07-25 03:56:03.313284"], ["id", 1]]
+  ↳ app/controllers/articles_controller.rb:29:in `update'
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:29:in `update'
+Redirected to http://127.0.0.1:3000/articles/1
+Completed 302 Found in 45ms (ActiveRecord: 16.9ms | Allocations: 3843)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-07-24 21:56:03 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 362)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 2.3ms | Allocations: 153)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+Completed 200 OK in 99ms (Views: 87.4ms | ActiveRecord: 0.3ms | Allocations: 11618)
+
+
+Started PATCH "/articles/1" for 127.0.0.1 at 2022-07-24 21:56:10 -0600
+Processing by ArticlesController#update as HTML
+  Parameters: {"authenticity_token"=>"3A6ZqTRaILZM0augTqTY5eFX0EAFOofxxPP/otyEMlkzaYo4KWezUaG4X8onKUXfk0RoQ7Eic7cPvSLw7H3Z9g==", "article"=>{"title"=>"Velvet", "description"=>"Rojo y gordo"}, "commit"=>"Update Article", "id"=>"1"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:29:in `update'
+  [1m[36mArticle Update (7.5ms)[0m  [1m[33mUPDATE "articles" SET "description" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["description", "Rojo y gordo"], ["updated_at", "2022-07-25 03:56:10.245301"], ["id", 1]]
+  ↳ app/controllers/articles_controller.rb:29:in `update'
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:29:in `update'
+Redirected to http://127.0.0.1:3000/articles/1
+Completed 302 Found in 29ms (ActiveRecord: 10.6ms | Allocations: 3520)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-07-24 21:56:10 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 152)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+Completed 200 OK in 69ms (Views: 65.8ms | ActiveRecord: 0.3ms | Allocations: 9794)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-07-24 21:58:56 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 6.3ms | Allocations: 648)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 341)
+  Rendered layouts/_messages.html.erb (Duration: 0.6ms | Allocations: 161)
+Completed 200 OK in 101ms (Views: 84.6ms | ActiveRecord: 0.7ms | Allocations: 11844)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-24 22:00:54 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 95)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 351)
+  Rendered layouts/_messages.html.erb (Duration: 1.0ms | Allocations: 161)
+Completed 200 OK in 75ms (Views: 72.7ms | ActiveRecord: 0.0ms | Allocations: 10668)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-24 22:00:54 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 167)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 63ms (Views: 62.5ms | ActiveRecord: 0.0ms | Allocations: 9401)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-24 22:02:08 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.0ms | Allocations: 93)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 350)
+  Rendered layouts/_messages.html.erb (Duration: 1.6ms | Allocations: 161)
+  Rendered layouts/_footer.html.erb (Duration: 1.6ms | Allocations: 150)
+Completed 200 OK in 90ms (Views: 86.7ms | ActiveRecord: 0.0ms | Allocations: 11118)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-24 22:02:34 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 92)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 355)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 161)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 447)
+Completed 200 OK in 75ms (Views: 72.6ms | ActiveRecord: 0.0ms | Allocations: 11540)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-24 22:02:37 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 167)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 66ms (Views: 65.2ms | ActiveRecord: 0.0ms | Allocations: 9119)
+
+
