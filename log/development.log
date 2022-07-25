@@ -863,3 +863,680 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 89ms (Views: 84.2ms | ActiveRecord: 0.6ms | Allocations: 18276)
 
 
+Started GET "/articles" for 127.0.0.1 at 2022-07-25 15:26:51 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/_article.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:7
+  Rendered articles/_article.html.erb (Duration: 38.2ms | Allocations: 22210)
+  Rendered articles/index.html.erb within layouts/application (Duration: 42.0ms | Allocations: 23069)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 350)
+  Rendered layouts/_messages.html.erb (Duration: 0.6ms | Allocations: 169)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 150)
+Completed 200 OK in 171ms (Views: 151.9ms | ActiveRecord: 2.4ms | Allocations: 48510)
+
+
+Started GET "/user" for 127.0.0.1 at 2022-07-25 15:26:57 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+actionpack (6.0.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.5.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.5.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.5.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.5.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.5.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.5.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/host_authorization.rb:103:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.0.5.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/rails/info/routes?path=user" for 127.0.0.1 at 2022-07-25 15:27:02 -0600
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"user"}
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2159)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-25 15:34:36 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+actionpack (6.0.5.1) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.5.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.5.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.5.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.5.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.5.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.5.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.5.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.5.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.5.1) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/cookies.rb:654:in `call'
+activerecord (6.0.5.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.5.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.5.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.5.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.5.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.5.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.5.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.5.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.5.1) lib/action_dispatch/middleware/host_authorization.rb:103:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.0.5.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/1" for 127.0.0.1 at 2022-07-25 15:34:42 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/articles/_article.html.erb:2
+  Rendered articles/_article.html.erb (Duration: 6.7ms | Allocations: 1736)
+  Rendered users/show.html.erb within layouts/application (Duration: 10.8ms | Allocations: 2189)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 337)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 161)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 143)
+Completed 200 OK in 135ms (Views: 84.1ms | ActiveRecord: 0.9ms | Allocations: 16476)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-07-25 15:44:37 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/articles/_article.html.erb:2
+  Rendered articles/_article.html.erb (Duration: 20.7ms | Allocations: 6207)
+  Rendered users/show.html.erb within layouts/application (Duration: 24.0ms | Allocations: 6651)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 411)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 161)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 143)
+Completed 200 OK in 110ms (Views: 91.4ms | ActiveRecord: 0.8ms | Allocations: 24662)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-25 15:44:39 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[35m (8.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/index.html.erb:15
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/index.html.erb:15
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 35.4ms | Allocations: 4680)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 201)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 106ms (Views: 92.8ms | ActiveRecord: 9.8ms | Allocations: 19320)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-25 16:07:47 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 192)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.9ms | Allocations: 408)
+  Rendered layouts/_messages.html.erb (Duration: 1.5ms | Allocations: 161)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 143)
+Completed 200 OK in 76ms (Views: 73.3ms | ActiveRecord: 0.0ms | Allocations: 11070)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-25 16:07:48 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/index.html.erb:15
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/index.html.erb:15
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 31.0ms | Allocations: 10092)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 201)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 41)
+Completed 200 OK in 104ms (Views: 94.3ms | ActiveRecord: 1.4ms | Allocations: 20945)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-25 16:07:52 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 65)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 201)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 51ms (Views: 49.7ms | ActiveRecord: 0.0ms | Allocations: 9107)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-07-25 16:07:53 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 1.1ms | Allocations: 196)
+  Rendered users/_form.html.erb (Duration: 35.3ms | Allocations: 2558)
+  Rendered users/new.html.erb within layouts/application (Duration: 39.0ms | Allocations: 2881)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 198)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 97ms (Views: 93.9ms | ActiveRecord: 0.0ms | Allocations: 12086)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-25 16:08:16 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"viYCsMEW4BErLJIiulPj0f1VNHQ7tLbg5iUUjClAoV0BnFdMFEhdkNx0LpxWuOsRvMYq6nZjSevWZ3I6LFRfkA==", "user"=>{"username"=>"oddie", "email"=>"oddieguapo@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "oddie"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "oddieguapo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (10.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["username", "oddie"], ["email", "oddieguapo@gmail.com"], ["created_at", "2022-07-25 22:08:16.415353"], ["updated_at", "2022-07-25 22:08:16.415353"], ["password_digest", "$2a$12$r/N3ZSwCDSV/qZBJaZdfbeKfX.cme9lDpQL3LfNYjY56RQo.UmZEW"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Redirected to http://127.0.0.1:3000/articles
+Completed 302 Found in 338ms (ActiveRecord: 13.6ms | Allocations: 5726)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-07-25 16:08:16 -0600
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/_article.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:7
+  Rendered articles/_article.html.erb (Duration: 12.8ms | Allocations: 7780)
+  Rendered articles/index.html.erb within layouts/application (Duration: 15.5ms | Allocations: 8478)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 90ms (Views: 86.3ms | ActiveRecord: 0.7ms | Allocations: 25248)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-25 16:08:19 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 64)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 201)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 65ms (Views: 64.3ms | ActiveRecord: 0.0ms | Allocations: 9097)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-25 16:08:21 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/index.html.erb:15
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/index.html.erb:15
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/index.html.erb:15
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 17.1ms | Allocations: 6518)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 201)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 79ms (Views: 76.3ms | ActiveRecord: 1.7ms | Allocations: 22770)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-25 16:08:26 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 59)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 197)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 97ms (Views: 95.9ms | ActiveRecord: 0.0ms | Allocations: 23455)
+
+
+Started GET "/signup" for 127.0.0.1 at 2022-07-25 16:08:27 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered users/_form.html.erb (Duration: 2.6ms | Allocations: 1258)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1335)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 196)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 48ms (Views: 47.6ms | ActiveRecord: 0.0ms | Allocations: 10371)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-25 16:08:36 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"dHS1XAHuEiwMRcvMpHD+x87HMpaBZfhppOwfrP0jjnfLzuCg1LCvrfsdd3JIm/YHj1QsCMyyB2KUrnka+Ddwug==", "user"=>{"username"=>"velvet", "email"=>"velvetc19@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "velvet"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "velvetc19@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (8.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["username", "velvet"], ["email", "velvetc19@gmail.com"], ["created_at", "2022-07-25 22:08:36.778243"], ["updated_at", "2022-07-25 22:08:36.778243"], ["password_digest", "$2a$12$nlV8RcYfleK7TCQsUfZs4Oyp0xFL1y6Ino6gxMUOOxtmQWoag6wNy"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Redirected to http://127.0.0.1:3000/articles
+Completed 302 Found in 271ms (ActiveRecord: 11.6ms | Allocations: 5254)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-07-25 16:08:36 -0600
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/_article.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:7
+  Rendered articles/_article.html.erb (Duration: 5.9ms | Allocations: 1939)
+  Rendered articles/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2016)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 196)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 41)
+Completed 200 OK in 71ms (Views: 69.5ms | ActiveRecord: 0.5ms | Allocations: 19314)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-25 16:08:40 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/index.html.erb:15
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/index.html.erb:15
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/index.html.erb:15
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/users/index.html.erb:15
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 18.4ms | Allocations: 6681)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 197)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 75ms (Views: 71.8ms | ActiveRecord: 1.8ms | Allocations: 23940)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-07-25 16:08:46 -0600
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/_article.html.erb:2
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:7
+  Rendered articles/_article.html.erb (Duration: 7.8ms | Allocations: 1939)
+  Rendered articles/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2016)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 196)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 65ms (Views: 63.2ms | ActiveRecord: 1.1ms | Allocations: 11063)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-07-25 16:08:48 -0600
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered articles/_form.html.erb (Duration: 131.0ms | Allocations: 7804)
+  Rendered articles/new.html.erb within layouts/application (Duration: 134.8ms | Allocations: 8136)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 199)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 208ms (Views: 199.8ms | ActiveRecord: 0.0ms | Allocations: 24581)
+
+
+Started POST "/articles" for 127.0.0.1 at 2022-07-25 16:08:58 -0600
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"nenTs+gt554yn1mhrtNp4XdE8llyWQIGWs/1ilZEAFxwSwpINOTqqy6YPdjzUBXItJPj/YAMfWi6Eu+ZYVXzVw==", "article"=>{"title"=>"Gatos", "description"=>"Un gato rojo y gordo"}, "commit"=>"Create Article"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+  Rendering articles/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.3ms | Allocations: 154)
+  Rendered articles/_form.html.erb (Duration: 4.0ms | Allocations: 1578)
+  Rendered articles/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1852)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 196)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 65ms (Views: 59.9ms | ActiveRecord: 0.3ms | Allocations: 19105)
+
+
+Started POST "/articles" for 127.0.0.1 at 2022-07-25 16:09:02 -0600
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"PU5o/GWhfCXuu5oNfDdoAb4AQgNgVnXclbydXhWeWevSKXtteJzvwgPSbmcVuvU7zBP6ANROgZpe8kAMJWeyRA==", "article"=>{"title"=>"Gatos locos", "description"=>"Un gato rojo y gordo"}, "commit"=>"Create Article"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms | Allocations: 4109)
+
+
+  
+NameError (undefined local variable or method `email' for #<Article:0x000001aab706f1e0>):
+  
+app/models/article.rb:2:in `block in <class:Article>'
+app/controllers/articles_controller.rb:21:in `create'
+Started POST "/articles" for 127.0.0.1 at 2022-07-25 16:11:09 -0600
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"PU5o/GWhfCXuu5oNfDdoAb4AQgNgVnXclbydXhWeWevSKXtteJzvwgPSbmcVuvU7zBP6ANROgZpe8kAMJWeyRA==", "article"=>{"title"=>"Gatos locos", "description"=>"Un gato rojo y gordo"}, "commit"=>"Create Article"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:21:in `create'
+  [1m[36mArticle Create (1.4ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Gatos locos"], ["description", "Un gato rojo y gordo"], ["created_at", "2022-07-25 22:11:10.013689"], ["updated_at", "2022-07-25 22:11:10.013689"], ["user_id", 1]]
+  ↳ app/controllers/articles_controller.rb:21:in `create'
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/articles/2
+Completed 302 Found in 66ms (ActiveRecord: 7.3ms | Allocations: 17842)
+
+
+Started GET "/articles/2" for 127.0.0.1 at 2022-07-25 16:11:10 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:46:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 386.3ms | Allocations: 186853)
+Completed 500 Internal Server Error in 513ms (ActiveRecord: 0.4ms | Allocations: 195006)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article' for #<#<Class:0x0000021fb3afee00>:0x0000021fb3afd500>
+Did you mean?  @article):
+     6:       <div class="col-8 mt-4">
+     7:         <div class="card text-center shadow mb-5 bg-white rounded">
+     8:           <div class="card-header font-italic">
+     9:             <% if article.user %>
+    10:               by <%= link_to article.user.username, user_path(article.user) %>
+    11:             <% end %>          </div>
+    12:           <div class="card-body">
+  
+app/views/articles/show.html.erb:9
+Started GET "/articles/2" for 127.0.0.1 at 2022-07-25 16:11:39 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:46:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:9
+  Rendered articles/show.html.erb within layouts/application (Duration: 172.4ms | Allocations: 9743)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 423)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 169)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 150)
+Completed 200 OK in 280ms (Views: 272.8ms | ActiveRecord: 0.6ms | Allocations: 30084)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-07-25 16:11:45 -0600
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/_article.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:7
+  Rendered articles/_article.html.erb (Duration: 10.0ms | Allocations: 3517)
+  Rendered articles/index.html.erb within layouts/application (Duration: 19.2ms | Allocations: 3847)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 200)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 80ms (Views: 76.2ms | ActiveRecord: 0.7ms | Allocations: 13063)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2022-07-25 16:11:48 -0600
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:46:in `set_article'
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.6ms | Allocations: 197)
+  Rendered articles/_form.html.erb (Duration: 20.8ms | Allocations: 2507)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 24.2ms | Allocations: 2843)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 199)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 41)
+Completed 200 OK in 83ms (Views: 78.2ms | ActiveRecord: 0.3ms | Allocations: 12647)
+
+
+Started PATCH "/articles/1" for 127.0.0.1 at 2022-07-25 16:11:51 -0600
+Processing by ArticlesController#update as HTML
+  Parameters: {"authenticity_token"=>"8Pq3r3L5cRhMGPJUgASpV5g0P6WDcqvJiLBNuRDVMrmKmH41ys0so2/boHdbHuEbPWwzsTsPCB/ybjnIOl5PRw==", "article"=>{"title"=>"Velvet", "description"=>"Rojo y gordo es"}, "commit"=>"Update Article", "id"=>"1"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:46:in `set_article'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:30:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:30:in `update'
+  [1m[36mArticle Update (2.1ms)[0m  [1m[33mUPDATE "articles" SET "description" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["description", "Rojo y gordo es"], ["updated_at", "2022-07-25 22:11:51.623975"], ["id", 1]]
+  ↳ app/controllers/articles_controller.rb:30:in `update'
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:30:in `update'
+Redirected to http://127.0.0.1:3000/articles/1
+Completed 302 Found in 19ms (ActiveRecord: 5.3ms | Allocations: 4973)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-07-25 16:11:51 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:46:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:9
+  Rendered articles/show.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1252)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 197)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 64ms (Views: 59.6ms | ActiveRecord: 0.9ms | Allocations: 10909)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-07-25 16:11:53 -0600
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered articles/_form.html.erb (Duration: 4.0ms | Allocations: 1392)
+  Rendered articles/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1853)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 199)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 66ms (Views: 62.6ms | ActiveRecord: 0.0ms | Allocations: 17255)
+
+
+Started POST "/articles" for 127.0.0.1 at 2022-07-25 16:12:03 -0600
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"VJUdUSBsggFGbZDN0c9ujPP0+OdGz1QDXaDKZKOq9BG5N8Sq/KWPNFpq9LSMTBKlMCPpQ7SaK229fdB3lLsHGg==", "article"=>{"title"=>"Perros", "description"=>"Hay muchos en este lugar"}, "commit"=>"Create Article"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:21:in `create'
+  [1m[36mArticle Create (1.1ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Perros"], ["description", "Hay muchos en este lugar"], ["created_at", "2022-07-25 22:12:03.593042"], ["updated_at", "2022-07-25 22:12:03.593042"], ["user_id", 1]]
+  ↳ app/controllers/articles_controller.rb:21:in `create'
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/articles/3
+Completed 302 Found in 19ms (ActiveRecord: 4.3ms | Allocations: 4318)
+
+
+Started GET "/articles/3" for 127.0.0.1 at 2022-07-25 16:12:03 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:46:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:9
+  Rendered articles/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1246)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 197)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 69ms (Views: 65.4ms | ActiveRecord: 0.6ms | Allocations: 10916)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-07-25 16:12:05 -0600
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered articles/_form.html.erb (Duration: 3.8ms | Allocations: 1125)
+  Rendered articles/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1202)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 196)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 69ms (Views: 67.6ms | ActiveRecord: 0.0ms | Allocations: 10251)
+
+
+Started POST "/articles" for 127.0.0.1 at 2022-07-25 16:12:13 -0600
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"XoQJkf7AuNsCAWLNd6Upu7YfYNMiCOzTpOrgFuSA/CizJtBqIgm17h4GBrQqJlWSdchxd9Bdk71EN/oF05EPIw==", "article"=>{"title"=>"Sueño", "description"=>"Es lo que me falta"}, "commit"=>"Create Article"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+  Rendering articles/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.3ms | Allocations: 154)
+  Rendered articles/_form.html.erb (Duration: 2.1ms | Allocations: 1291)
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1368)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 196)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 59ms (Views: 53.1ms | ActiveRecord: 0.3ms | Allocations: 12090)
+
+
+Started POST "/articles" for 127.0.0.1 at 2022-07-25 16:12:18 -0600
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"VxdGMErtJsrQgfq2JgOysj6R9foAoZI9pNgi5qG6xSG4cFWhV9C1LT3oDtxPji+ITIJN+bS5Zntvlv+0kUMujg==", "article"=>{"title"=>"Sueño y café", "description"=>"Es lo que me falta"}, "commit"=>"Create Article"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:21:in `create'
+  [1m[36mArticle Create (2.7ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Sueño y café"], ["description", "Es lo que me falta"], ["created_at", "2022-07-25 22:12:18.630315"], ["updated_at", "2022-07-25 22:12:18.630315"], ["user_id", 1]]
+  ↳ app/controllers/articles_controller.rb:21:in `create'
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/articles/4
+Completed 302 Found in 17ms (ActiveRecord: 5.8ms | Allocations: 5178)
+
+
+Started GET "/articles/4" for 127.0.0.1 at 2022-07-25 16:12:18 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:46:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:9
+  Rendered articles/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1242)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 197)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 67ms (Views: 64.3ms | ActiveRecord: 0.6ms | Allocations: 11141)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-07-25 16:12:21 -0600
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/_article.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:7
+  Rendered articles/_article.html.erb (Duration: 22.1ms | Allocations: 5500)
+  Rendered articles/index.html.erb within layouts/application (Duration: 22.7ms | Allocations: 5577)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 196)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 81ms (Views: 79.6ms | ActiveRecord: 0.7ms | Allocations: 14627)
+
+
